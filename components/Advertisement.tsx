@@ -11,7 +11,7 @@ interface AdProps {
 export default function Advertisement({ slot, format = 'auto', style }: AdProps) {
   useEffect(() => {
     try {
-      // @ts-ignore
+      // @ts-expect-error - AdSense types not available
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error('AdSense error:', err);
